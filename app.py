@@ -1,12 +1,14 @@
 from flask import Flask
+from flask import render_template
 
 
-app = Flask(__name__)
+
+app = Flask(__name__,template_folder='templates')
 
 
 @app.route('/')
 def hello():
-    return '<h3>hello<h3>'
+    return render_template('index.html')
 
 
 @app.route('/post')
